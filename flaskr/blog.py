@@ -103,3 +103,26 @@ def delete(id):
     db.execute('DELETE FROM post WHERE id = ?', (id,))
     db.commit()
     return redirect(url_for('blog.index'))
+
+# Database query for single post
+def get_post(id, check_author=True):
+    post = get_db().execute(
+        'SELECT p.id, title, body, created, author_id, firstname'
+        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' WHERE p.id = ?',
+        (id,)
+    ).fetchone()
+
+    if post is None:
+        abort(404, f"Post id {id} doesn't exist.")
+
+    if check_author and post['author_id'] != g.user['id']:
+        abort(403)
+
+    return post
+
+# Detail view route
+@bp.route('/post/<int:id>')
+def detail(id):
+    post = get_post(id, check_author=False)
+    return render_template('blog/detail.html', post=post)
