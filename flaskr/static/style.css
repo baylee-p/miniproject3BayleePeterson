@@ -12,7 +12,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: serif;
-  color: #377ba8;
+  color: #135115;
   margin: 1rem 0;
 }
 
@@ -131,4 +131,147 @@ input.danger {
 input[type=submit] {
   align-self: start;
   min-width: 10em;
+}
+
+.modal-dialog {
+  max-width: 600px; /* Set a custom width for the modal */
+  margin: 30px auto; /* Center the modal vertically and horizontally */
+}
+
+/*  Add rounded corners */
+.modal-content {
+  border-radius: 10px; /* Add rounded corners to the modal */
+}
+
+/*  Smooth fade-in effect */
+.modal.fade .modal-dialog {
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/* Style the modal header */
+.modal-header {
+  background-color: #135115; /* Add a custom background color */
+  color: white; /* Make the text white */
+  border-bottom: 2px solid #ddd; /* add a border */
+  border-top-left-radius: 10px; /* Rounded top-left corner */
+  border-top-right-radius: 10px; /* Rounded top-right corner */
+  padding: 10px 20px; /* Reduced padding to make the header shorter */
+  height: auto; /* Automatically adjust height based on content */
+}
+
+.modal-title {
+  font-size: 1.5em; /* Increase font size for the title */
+  font-weight: bold;
+  margin: 0; /* Remove margin from title */
+}
+
+/* Style the modal body form */
+.modal-body {
+  padding: 20px;
+  background-color: #f9f9f9; /* Set a light background color */
+}
+
+/* Style input fields and buttons */
+.modal-body input,
+.modal-body button {
+  width: 100%; /* Make inputs and buttons stretch to full width */
+  padding: 10px;
+  margin: 10px 0; /* Space out form fields */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Add light border */
+  font-size: 1rem;
+  box-sizing: border-box; /* Prevent inputs from overflowing */
+}
+
+/* Style the submit button */
+.modal-body button[type="submit"] {
+  background-color: #135115; /* Green background for the submit button */
+  color: white;
+  border: none; /* Remove default button border */
+  cursor: pointer;
+}
+
+/* Change button color on hover */
+.modal-body button[type="submit"]:hover {
+  background-color: #135115; /* Darker green on hover */
+}
+
+/* Style the modal body form */
+.modal-body {
+  padding: 20px;
+  background-color: #acacac; /* Set a light background color */
+  overflow: hidden; /* Prevent any overflow */
+}
+
+/* Style input fields and buttons */
+.modal-body input,
+.modal-body button {
+  width: 100%; /* Make inputs and buttons stretch to full width */
+  padding: 10px;
+  margin: 10px 0; /* Space out form fields */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Add light border */
+  font-size: 1rem;
+}
+
+/* Style the submit button */
+.modal-body button[type="submit"] {
+  background-color: #135115; /* Green background for the submit button */
+  color: white;
+  border: none; /* Remove default button border */
+  cursor: pointer;
+}
+
+/* Change button color on hover */
+.modal-body button[type="submit"]:hover {
+  background-color: #135115; /* Darker green on hover */
+  padding-bottom: 1em;
+}
+
+/* Style the close button */
+.modal-header .close {
+  color: black; /* Make the close button text white */
+  font-size: 1.5em; /* Increase font size for better visibility */
+  opacity: 1; /* Remove the default transparency */
+}
+
+.modal-header .close:hover,
+.modal-header .close:focus {
+  color: #ddd; /* Change close button color on hover/focus */
+  text-decoration: none; /* Remove underline on hover/focus */
+}
+
+/* Modal Fade-in Animation */
+.modal.fade .modal-dialog {
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/* Add a shadow effect */
+.modal-content {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the modal */
+}
+
+/* Style the modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the background */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Modify when the modal is opened */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.7); /* Make the backdrop darker when visible */
 }
